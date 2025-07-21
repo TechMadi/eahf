@@ -1,5 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
-@use "tailwindcss";
+@import "tailwindcss";
+@import "styles/_themes";
+
 
 @import "preline/variants.css";
 
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Raleway:wght@400;600&display=swap');
+
+
+@theme{
+  --color-sage-50: #f0f9f4;
+  --color-sage-100: #dcf2e4;
+  --color-sage-200: #bbe5cc;
+  --color-sage-300: #8dd5aa;
+  --color-sage-400: #6dae8a;  /* Your main sage */
+  --color-sage-500: #4a9968;
+  --color-sage-600: #3a7a52;
+  --color-sage-700: #2f5f42;
+  --color-sage-800: #284e36;
+  --color-sage-900: #1f3e2b;
+  --color-sage-950: #0f251a;
+
+  --color-coral-50: #fef4f2;
+  --color-coral-100: #fee8e4;
+  --color-coral-200: #fcd5ce;
+  --color-coral-300: #f9b5a8;
+  --color-coral-400: #f28a72;  /* Your main coral */
+  --color-coral-500: #ed6b4e;
+  --color-coral-600: #da4e2a;
+  --color-coral-700: #b73e22;
+  --color-coral-800: #973821;
+  --color-coral-900: #7c3520;
+  --color-coral-950: #43190e;
+
+  --color-gold-50: #fefbf0;
+  --color-gold-100: #fef6dc;
+  --color-gold-200: #fcecb9;
+  --color-gold-300: #f9dc86;
+  --color-gold-400: #f5c851;
+  --color-gold-500: #e3b23c;  /* Your main gold */
+  --color-gold-600: #d19a28;
+  --color-gold-700: #ad7823;
+  --color-gold-800: #8c5f24;
+  --color-gold-900: #754f21;
+  --color-gold-950: #432a0f;
+}
+
+ body{
+     font-family: var(--font-body);
+ }
+
+
+ h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors duration-200 ;
+  }
+
+  .btn-sage {
+    @apply bg-sage-500 hover:bg-sage-600 text-white;
+  }
+
+  .btn-coral {
+    @apply bg-coral-500 hover:bg-coral-600 text-white;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-600 text-white;
+  }
+
+  .btn-gold-outline {
+    @apply border border-gold-500 text-gold-600 bg-transparent hover:bg-gold-50;
+  }
+
+  .btn-sage-outline {
+    @apply border border-sage-400 text-sage-400 bg-transparent hover:bg-[--color-sage-50];
+  }
+
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
