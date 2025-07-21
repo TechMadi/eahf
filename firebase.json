@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/eaf-website/broswer",
+    "public": "dist/eaf-website/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
