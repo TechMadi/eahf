@@ -1,3 +1,129 @@
+<app-container class="my-8 md:my-16">
+	<app-section-header
+		title="What We Offer"
+		description="We specialize in Activities of Daily Living (ADL) support with attention to dignity and autonomy. Our services include:"
+	></app-section-header>
+	<div class="max-w-2xl lg:max-w-5xl my-16">
+		<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+			<div
+				class="flex"
+				style="opacity: 1; transform: none"
+			>
+				<article
+					class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8"
+				>
+					<h3>
+						<a href="/work/family-fund"
+							><span class="absolute inset-0 rounded-3xl"></span>
+							<ng-icon
+								color="#6dae8a"
+								name="simpleUnitednations"
+								class="text-6xl"
+							></ng-icon>
+						</a>
+					</h3>
+					<p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+						<time
+							datetime="2023"
+							class="font-semibold"
+							>2023</time
+						><span
+							class="text-neutral-300"
+							aria-hidden="true"
+							>/</span
+						><span>Case study</span>
+					</p>
+					<p class="mt-6 font-display text-2xl font-semibold text-neutral-950">
+						Skip the bank, borrow from those you trust
+					</p>
+					<p class="mt-4 text-base text-neutral-600">
+						FamilyFund is a crowdfunding platform for friends and family.
+						Allowing users to take personal loans from their network without a
+						traditional financial institution.
+					</p>
+				</article>
+			</div>
+
+			<div
+				class="flex"
+				style="opacity: 1; transform: none"
+			>
+				<article
+					class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8"
+				>
+					<h3>
+						<a href="/work/family-fund"
+							><span class="absolute inset-0 rounded-3xl"></span>
+							<ng-icon
+								color="#6dae8a"
+								name="simpleUnitednations"
+								class="text-6xl"
+							></ng-icon>
+						</a>
+					</h3>
+					<p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+						<time
+							datetime="2023"
+							class="font-semibold"
+							>2023</time
+						><span
+							class="text-neutral-300"
+							aria-hidden="true"
+							>/</span
+						><span>Case study</span>
+					</p>
+					<p class="mt-6 font-display text-2xl font-semibold text-neutral-950">
+						Skip the bank, borrow from those you trust
+					</p>
+					<p class="mt-4 text-base text-neutral-600">
+						FamilyFund is a crowdfunding platform for friends and family.
+						Allowing users to take personal loans from their network without a
+						traditional financial institution.
+					</p>
+				</article>
+			</div>
+
+			<div
+				class="flex"
+				style="opacity: 1; transform: none"
+			>
+				<article
+					class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8"
+				>
+					<h3>
+						<a href="/work/family-fund"
+							><span class="absolute inset-0 rounded-3xl"></span>
+							<ng-icon
+								color="#6dae8a"
+								name="simpleUnitednations"
+								class="text-6xl"
+							></ng-icon>
+						</a>
+					</h3>
+					<p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+						<time
+							datetime="2023"
+							class="font-semibold"
+							>2023</time
+						><span
+							class="text-neutral-300"
+							aria-hidden="true"
+							>/</span
+						><span>Case study</span>
+					</p>
+					<p class="mt-6 font-display text-2xl font-semibold text-neutral-950">
+						Skip the bank, borrow from those you trust
+					</p>
+					<p class="mt-4 text-base text-neutral-600">
+						FamilyFund is a crowdfunding platform for friends and family.
+						Allowing users to take personal loans from their network without a
+						traditional financial institution.
+					</p>
+				</article>
+			</div>
+		</div>
+	</div>
+</app-container>
 <app-container>
 	<div class="relative isolate bg-cream-500 py-16 sm:py-28 md:py-32">
 		<svg
@@ -112,12 +238,19 @@
 					>
 						@for (client of clientLists; track $index) {
 						<li>
-							<div style="opacity: 1; transform: none">
+							<div
+								class="space-x-4 flex justify-start"
+								style="opacity: 1; transform: none"
+							>
 								<ng-icon
 									color=" #fff9f0"
 									[name]="client.icon"
-									class="text-6xl fill-cream-100"
+									class="text-3xl fill-cream-100"
 								></ng-icon>
+
+								<span class="text-2xl font-bold text-cream-100 my-auto"
+									>Name</span
+								>
 							</div>
 						</li>
 						}

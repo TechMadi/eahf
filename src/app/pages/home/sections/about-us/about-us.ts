@@ -8,10 +8,11 @@ import {
 	simpleUnitednations,
 	simpleWorldhealthorganization,
 } from "@ng-icons/simple-icons";
+import { SectionHeader } from "../../../../../shared/components/section-header/section-header";
 
 @Component({
 	selector: "app-about-us",
-	imports: [Container, NgIcon],
+	imports: [Container, NgIcon, SectionHeader],
 	templateUrl: "./about-us.html",
 	styleUrl: "./about-us.scss",
 	viewProviders: [
