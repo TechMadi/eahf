@@ -29,9 +29,25 @@
 			content="width=device-width, initial-scale=1"
 		/>
 		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./favicon/apple-touch-icon.png"
+		/>
+		<link
 			rel="icon"
-			type="image/x-icon"
-			href="favicon.ico"
+			type="image/png"
+			sizes="32x32"
+			href="./favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./favicon/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="./favicon/site.webmanifest"
 		/>
 
 		<meta
@@ -44,7 +60,7 @@
 		/>
 		<meta
 			property="og:image"
-			content="https://eafh-uk.web.app/images/og-preview.jpg"
+			content="https://eafh-uk.web.app/brand/og-preview.jpg"
 		/>
 		<meta
 			property="og:url"
@@ -58,6 +74,50 @@
 			property="og:locale"
 			content="en_US"
 		/>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "AdultCareHome",
+				"name": "Excellence Adult Family Home",
+				"description": "We provide a warm, safe, and nurturing environment for seniors who need personalized, round-the-clock care in Tacoma, WA.",
+				"image": "https://eafh-uk.web.app/brand/og-preview.jpg",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "6808 Homestead Ave",
+					"addressLocality": "Tacoma",
+					"addressRegion": "WA",
+					"postalCode": "98404",
+					"addressCountry": "US"
+				},
+				"telephone": "+1-253-392-4256",
+				"email": "excellenceafh22@gmail.com",
+				"url": "https://eafh-uk.web.app/",
+				"openingHours": "Mo-Su 00:00-23:59",
+				"founder": {
+					"@type": "Person",
+					"name": "Excellence AFH Team"
+				},
+				"priceRange": "$$",
+				"amenityFeature": [
+					{
+						"@type": "LocationFeatureSpecification",
+						"name": "Home-cooked Meals",
+						"value": true
+					},
+					{
+						"@type": "LocationFeatureSpecification",
+						"name": "24/7 Staff",
+						"value": true
+					},
+					{
+						"@type": "LocationFeatureSpecification",
+						"name": "Personalized Care Plans",
+						"value": true
+					}
+				]
+			}
+		</script>
 	</head>
 	<body class="bg-cream-500">
 		<app-root></app-root>
