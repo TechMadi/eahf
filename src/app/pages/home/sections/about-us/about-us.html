@@ -1,4 +1,4 @@
-<app-container class="my-8 md:my-16">
+<!-- <app-container class="my-8 md:my-16">
 	<app-section-header
 		title="What We Offer"
 		description="We specialize in Activities of Daily Living (ADL) support with attention to dignity and autonomy. Our services include:"
@@ -123,9 +123,9 @@
 			</div>
 		</div>
 	</div>
-</app-container>
-<app-container>
-	<div class="relative isolate bg-cream-500 py-16 sm:py-28 md:py-32">
+</app-container> -->
+<app-container class="bg-coral-400/20 py-16">
+	<div class="relative isolate py-16 sm:py-28 md:py-32">
 		<svg
 			aria-hidden="true"
 			class="absolute inset-0 -z-10 h-full w-full mask-[linear-gradient(to_bottom_left,white_50%,transparent_60%)] fill-neutral-100 stroke-neutral-950/5"
@@ -217,7 +217,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="rounded-4xl bg-slate-900 py-20">
+	<div class="rounded-4xl bg-slate-900 py-20 mb-8">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl lg:max-w-none">
 				<div
@@ -271,5 +271,59 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</app-container>
+
+<app-container class="my-8 md:my-16">
+	<app-section-header
+		eyedrop="About Us"
+		title="Why Families Choose Us"
+		description="As long as those opportunities involve giving us money to re-purpose old projects — we can come up with an endless number of those."
+	></app-section-header>
+
+	<div
+		class="flex space-x-6 max-w-2xl lg:max-w-6xl my-16 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
+	>
+		@for (reason of reasonsToChooseUs; track $index) {
+		<div
+			class="relative col-span-1 flex aspect-9/16 w-72 shrink-0 snap-start flex-col justify-end overflow-hidden rounded-3xl sm:aspect-3/4 sm:w-96"
+		>
+			<img
+				alt=""
+				src="https://images.pexels.com/photos/7551610/pexels-photo-7551610.jpeg"
+				class="absolute inset-x-0 top-0 aspect-square w-full object-cover"
+			/>
+			<div
+				aria-hidden="true"
+				class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black from-[calc(7/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
+			></div>
+			<figure class="relative p-10">
+				<blockquote>
+					<p class="relative text-xl/7 text-white">
+						<span
+							aria-hidden="true"
+							class="absolute -translate-x-full"
+							>“</span
+						>
+						{{reason.reason}}
+						<span
+							aria-hidden="true"
+							class="absolute"
+							>”</span
+						>
+					</p>
+				</blockquote>
+				<figcaption class="mt-6 border-t border-white/20 pt-6">
+					<p class="text-sm/6 font-medium text-white">Jane Shuyen</p>
+					<p class="text-sm/6 font-medium">
+						<span
+							class="bg-gradient-to-r from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] bg-clip-text text-transparent"
+							>Vp , Golden Zeal</span
+						>
+					</p>
+				</figcaption>
+			</figure>
+		</div>
+		}
 	</div>
 </app-container>

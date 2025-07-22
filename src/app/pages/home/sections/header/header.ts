@@ -8,6 +8,7 @@ import {
 
 import { NgIcon, provideIcons } from "@ng-icons/core";
 
+import { heroArrowUpRight } from "@ng-icons/heroicons/outline";
 import {
 	svglAffinityPublisher,
 	svglJetbrainsSpace,
@@ -23,6 +24,7 @@ import {
 			svglAffinityPublisher,
 			svglJetbrainsSpace,
 			svglGithubLight,
+			heroArrowUpRight,
 		}),
 	],
 })
