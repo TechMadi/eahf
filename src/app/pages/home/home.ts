@@ -6,10 +6,11 @@ import {
 import { SectionHeader } from "../../../shared/components/section-header/section-header";
 import { Header } from "./sections/header/header";
 import { AboutUs } from "./sections/about-us/about-us";
+import { Services } from "./sections/services/services";
 
 @Component({
 	selector: "app-home",
-	imports: [Container, SectionHeader, Header, AboutUs, Gradient],
+	imports: [Container, SectionHeader, Header, AboutUs, Gradient, Services],
 	templateUrl: "./home.html",
 	styleUrl: "./home.scss",
 })
