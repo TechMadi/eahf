@@ -6,7 +6,6 @@ import {
 } from "../../../plus-grid/plus-grid";
 import { IMenu, NAV_LIST } from "../../../models/navbar.const";
 import { RouterModule } from "@angular/router";
-
 @Component({
 	selector: "app-navbar-mobile-btn",
 	imports: [PlusGrid, PlusGridItem, RouterModule],
@@ -32,16 +31,27 @@ import { RouterModule } from "@angular/router";
 				/>
 			</svg>
 		</button>
+	`,
+	styleUrl: "./navbar.scss",
+})
+export class MobileNavbarBtn {
+	mobileLinks: IMenu[] = NAV_LIST;
+}
+
+@Component({
+	selector: "app-navbar-mobile",
+	imports: [RouterModule],
+	template: `
 		<div
 			id="mobile-nav"
 			class="hs-collapse hidden overflow-hidden transition-all duration-300 lg:hidden"
 		>
-			<div class="py-6 flex flex-col gap-6">
-				@for (navLink of mobileLinks; track $index) {
+			<div class="px-4 py-6 flex flex-col gap-6">
+				@for (navLink of navLinks; track $index) {
 				<a
 					[routerLink]="navLink.routerLink ?? ''"
 					[fragment]="navLink.fragment ?? ''"
-					class="text-base font-medium text-gray-950"
+					class="text-base font-medium text-gray-950 animate-fade-in-down duration-150 ease-in-out delay-[100ms] tap-highlight-none"
 				>
 					{{ navLink.label }}
 				</a>
@@ -55,8 +65,8 @@ import { RouterModule } from "@angular/router";
 	`,
 	styleUrl: "./navbar.scss",
 })
-export class MobileNavbarBtn {
-	mobileLinks: IMenu[] = NAV_LIST;
+export class MobileNavbar {
+	navLinks: IMenu[] = NAV_LIST;
 }
 
 @Component({
@@ -69,7 +79,7 @@ export class MobileNavbarBtn {
 				<a
 					[routerLink]="navLink.routerLink ?? ''"
 					[fragment]="navLink.fragment"
-					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5"
+					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 "
 				>
 					{{ navLink.label }}
 				</a>
@@ -91,7 +101,7 @@ export class DesktopNavbar {
 		RouterModule,
 		PlusGridRow,
 		DesktopNavbar,
-
+		MobileNavbar,
 		MobileNavbarBtn,
 	],
 	templateUrl: "./navbar.html",

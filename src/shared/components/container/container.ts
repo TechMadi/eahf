@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, input } from "@angular/core";
 
 @Component({
 	selector: "app-container",
@@ -7,5 +7,21 @@ import { Component, Input } from "@angular/core";
 	styleUrl: "./container.scss",
 })
 export class Container {
-	@Input() class: string = "";
+	class = input<string>("");
 }
+
+// Gradient
+
+@Component({
+	selector: "app-gradient",
+	imports: [],
+	template: `
+		<div
+			class="bg-gradient-to-br from-[#FFF5E1] from-20% via-[#F9B5A8] via-60% to-[#F9DC86] sm:bg-gradient-to-tr"
+		>
+			<ng-content></ng-content>
+		</div>
+	`,
+	styleUrl: "./container.scss",
+})
+export class Gradient {}

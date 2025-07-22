@@ -1,24 +1,40 @@
-<header class="pt-12 sm:pt-16">
+<div
+	as="header"
+	class="pt-10 sm:pt-5"
+>
 	<app-plus-grid>
-		<app-plus-grid-row class="relative flex justify-between">
-			<div class="relative flex gap-6">
-				<app-plus-grid-item class="py-3">
-					<a
-						routerLink="/"
-						title="Home"
-					>
-						Logo
-					</a>
-				</app-plus-grid-item>
+		<app-plus-grid-row>
+			<div class="relative flex justify-between">
+				<div class="relative flex gap-6">
+					<app-plus-grid-item class="py-3">
+						<a
+							routerLink="/"
+							title="Home"
+						>
+							<img
+								src="/brand/logo.png"
+								alt="Excellence Adult Family Home Logo"
+								class="h-9"
+							/>
+						</a>
+					</app-plus-grid-item>
 
-				@if (banner()) {
-				<div class="relative hidden items-center py-3 lg:flex">
-					{{banner()}}
+					@if (banner()) {
+					<div class="relative hidden items-center py-3 lg:flex">
+						<a
+							routerLink="/"
+							class="flex items-center gap-1 rounded-full bg-[#a78dc4]/40 px-3 py-0.5 text-sm/6 font-medium text-white hover:bg-[#a78dc4]/30"
+						>
+							{{banner()}}
+							<!-- <ChevronRightIcon className="size-4" /> -->
+						</a>
+					</div>
+					}
 				</div>
-				}
+				<app-navbar-desktop />
+				<app-navbar-mobile-btn class="flex md:hidden" />
 			</div>
-			<app-navbar-desktop />
-			<app-navbar-mobile-btn />
 		</app-plus-grid-row>
 	</app-plus-grid>
-</header>
+	<app-navbar-mobile></app-navbar-mobile>
+</div>

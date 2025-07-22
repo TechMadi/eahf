@@ -1,15 +1,48 @@
-<app-navbar></app-navbar>
+<div class="relative">
+	<app-gradient>
+		<app-container>
+			<app-navbar banner="Elderly Care"></app-navbar>
+		</app-container>
+		<!-- Hero -->
+		<div class="px-4 sm:px-6 lg:px-8">
+			<div
+				class="relative h-120 md:h-[80dvh] flex flex-col rounded-2xl overflow-hidden"
+			>
+				<!-- Background Image -->
+				<div
+					class="absolute inset-0 bg-[url('https://images.pexels.com/photos/8139237/pexels-photo-8139237.jpeg')] bg-cover bg-center bg-no-repeat"
+				></div>
 
-<!-- Hero -->
-<div class="px-4 sm:px-6 lg:px-8">
-	<div
-		class="h-120 md:h-[80dvh] flex flex-col bg-[url('https://images.unsplash.com/photo-1462917882517-e150004895fa?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat rounded-2xl"
-	>
-		<div class="mt-auto w-2/3 md:max-w-lg ps-5 pb-5 md:ps-10 md:pb-10">
-			<h1 class="text-xl md:text-3xl lg:text-5xl text-white">
-				Bringing Art to everything
-			</h1>
+				<!-- Gradient Overlay -->
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/50 to-transparent"
+				></div>
+
+				<!-- Content -->
+				<div
+					class="relative space-y-4 mt-auto w-4/6 md:max-w-3xl ps-5 pb-5 md:ps-10 md:pb-10"
+				>
+					<h1 class="text-xl md:text-3xl lg:text-5xl text-cream-200">
+						Excellence in Care.
+					</h1>
+					<p class="text-cream-100 text-xl">
+						At Excellence Adult Family Home, we provide a warm, safe, and
+						nurturing environment for seniors who need personalized,
+						round-the-clock care.
+					</p>
+					<!-- <p class="text-cream-100 text-xl">
+						Located in the heart of Tacoma, WA, our cozy, family-style residence
+						offers more than just a place to stay - we offer a place to thrive.
+					</p> -->
+					<div class="actions flex gap-4 items-center">
+						<button class="btn btn-coral">Book a consultation</button>
+						<a class="text-white text-sm"
+							>Explore Services <ng-icon name="heroArrowUpRight"></ng-icon
+						></a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+		<!-- End Hero -->
+	</app-gradient>
 </div>
-<!-- End Hero -->

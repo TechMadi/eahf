@@ -10,6 +10,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet, Event } from "@angular/router";
 import { Navbar } from "../shared/components/layout/navbar/navbar";
 import { Footer } from "../shared/components/layout/footer/footer";
+import * as AOS from "aos";
 
 @Component({
 	selector: "app-root",
@@ -27,5 +28,7 @@ export class App implements OnInit {
 				setTimeout(() => window.HSStaticMethods.autoInit(), 100);
 			}
 		});
+
+		AOS.init();
 	}
 }
