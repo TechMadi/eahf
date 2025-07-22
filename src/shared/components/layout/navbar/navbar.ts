@@ -8,7 +8,7 @@ import { IMenu, NAV_LIST } from "../../../models/navbar.const";
 import { RouterModule } from "@angular/router";
 @Component({
 	selector: "app-navbar-mobile-btn",
-	imports: [PlusGrid, PlusGridItem, RouterModule],
+	imports: [RouterModule],
 	template: `
 		<button
 			type="button"
@@ -71,7 +71,7 @@ export class MobileNavbar {
 
 @Component({
 	selector: "app-navbar-desktop",
-	imports: [PlusGrid, PlusGridItem, RouterModule],
+	imports: [PlusGridItem, RouterModule],
 	template: `
 		<nav class="relative hidden lg:flex">
 			@for (navLink of navLinks; track $index) {

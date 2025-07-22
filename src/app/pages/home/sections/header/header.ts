@@ -7,12 +7,41 @@ import {
 } from "../../../../../shared/components/container/container";
 
 import { NgIcon, provideIcons } from "@ng-icons/core";
-import { heroArrowUpRight } from "@ng-icons/heroicons/outline";
+
+import {
+	svglAffinityPublisher,
+	svglJetbrainsSpace,
+	svglGithubLight,
+} from "@ng-icons/svgl";
 @Component({
 	selector: "app-header",
 	imports: [Navbar, Gradient, Container, NgIcon],
 	templateUrl: "./header.html",
 	styleUrl: "./header.scss",
-	viewProviders: [provideIcons({ heroArrowUpRight })],
+	viewProviders: [
+		provideIcons({
+			svglAffinityPublisher,
+			svglJetbrainsSpace,
+			svglGithubLight,
+		}),
+	],
 })
-export class Header {}
+export class Header {
+	insuranceList: {
+		icon: string;
+		link: string;
+	}[] = [
+		{
+			icon: "svglAffinityPublisher",
+			link: "",
+		},
+		{
+			icon: "svglJetbrainsSpace",
+			link: "",
+		},
+		{
+			icon: "svglGithubLight",
+			link: "",
+		},
+	];
+}

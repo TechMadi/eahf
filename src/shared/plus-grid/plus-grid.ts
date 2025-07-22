@@ -75,7 +75,7 @@ export class PlusGridRow {
  */
 @Component({
 	selector: "app-plus-grid-item",
-	imports: [NgClass, PlusGridIcon],
+	imports: [PlusGridIcon],
 	template: `
 		<div class="group/item relative">
 			<app-plus-grid-icon

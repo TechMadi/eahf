@@ -1,5 +1,5 @@
 <div class="relative">
-	<app-gradient>
+	<app-gradient class="pb-8 rounded-b-4xl">
 		<app-container>
 			<app-navbar banner="Elderly Care"></app-navbar>
 		</app-container>
@@ -44,5 +44,30 @@
 			</div>
 		</div>
 		<!-- End Hero -->
+
+		<!-- alert -->
+
+		<div class="px-4 sm:px-6 lg:px-8 my-4">
+			<div
+				class="pointer-events-auto flex items-center justify-between gap-x-6 bg-cream-300 px-6 py-2.5 sm:rounded-xl sm:py-3"
+			>
+				<p class="font-bold text-lg">Insurance we work with</p>
+
+				<div>
+					@for (insurance of insuranceList; track $index) {
+					<a
+						href=""
+						target="_blank"
+						class="mx-2 hover:cursor-pointer hover:opacity-45"
+					>
+						<ng-icon
+							[name]="insurance.icon"
+							class="text-xl"
+						></ng-icon>
+					</a>
+					}
+				</div>
+			</div>
+		</div>
 	</app-gradient>
 </div>

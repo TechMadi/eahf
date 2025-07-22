@@ -8,13 +8,13 @@ declare global {
 
 import { Component, inject, OnInit } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet, Event } from "@angular/router";
-import { Navbar } from "../shared/components/layout/navbar/navbar";
+
 import { Footer } from "../shared/components/layout/footer/footer";
 import * as AOS from "aos";
 
 @Component({
 	selector: "app-root",
-	imports: [RouterOutlet, Navbar, Footer],
+	imports: [RouterOutlet, Footer],
 	templateUrl: "./app.html",
 	styleUrl: "./app.scss",
 })
