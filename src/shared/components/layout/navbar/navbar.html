@@ -1,0 +1,24 @@
+<header class="pt-12 sm:pt-16">
+	<app-plus-grid>
+		<app-plus-grid-row class="relative flex justify-between">
+			<div class="relative flex gap-6">
+				<app-plus-grid-item class="py-3">
+					<a
+						routerLink="/"
+						title="Home"
+					>
+						Logo
+					</a>
+				</app-plus-grid-item>
+
+				@if (banner()) {
+				<div class="relative hidden items-center py-3 lg:flex">
+					{{banner()}}
+				</div>
+				}
+			</div>
+			<app-navbar-desktop />
+			<app-navbar-mobile-btn />
+		</app-plus-grid-row>
+	</app-plus-grid>
+</header>

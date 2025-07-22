@@ -1,12 +1,14 @@
 import { Routes } from "@angular/router";
-import { ComingSoon } from "../shared/pages/coming-soon/coming-soon";
+import { ComingSoon } from "./pages/coming-soon/coming-soon";
+import { Home } from "./pages/home/home";
 
 export const routes: Routes = [
 	{
 		path: "",
-		component: ComingSoon,
+		component: Home,
 		pathMatch: "full",
 	},
+
 	{
 		path: "**",
 		component: ComingSoon,

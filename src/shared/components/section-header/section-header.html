@@ -1,0 +1,26 @@
+<app-container>
+	<div
+		class="max-w-2xl"
+		style="opacity: 1; transform: none"
+	>
+		<h2>
+			@if (eyedrop()) {
+			<span
+				class="mb-6 block font-display text-base font-semibold"
+				[class]="mode()==='dark'?'text-white':'text-neutral-950'"
+			>
+			</span>
+			<span className="sr-only"> - </span>
+			}
+
+			<span
+				class="block font-display tracking-tight text-balance text-4xl font-medium sm:text-5xl"
+				[class]="mode()==='dark'?'text-white':'text-neutral-950'"
+				>{{title()}}</span
+			>
+		</h2>
+		<div class="mt-6 text-xl text-neutral-600">
+			<p>{{description()}}</p>
+		</div>
+	</div>
+</app-container>
