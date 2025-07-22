@@ -10,7 +10,7 @@ import { Services } from "./sections/services/services";
 
 @Component({
 	selector: "app-home",
-	imports: [Container, SectionHeader, Header, AboutUs, Gradient, Services],
+	imports: [Header, AboutUs, Services],
 	templateUrl: "./home.html",
 	styleUrl: "./home.scss",
 })

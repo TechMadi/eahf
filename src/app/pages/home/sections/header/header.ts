@@ -8,15 +8,24 @@ import {
 
 import { NgIcon, provideIcons } from "@ng-icons/core";
 
-import { heroArrowUpRight } from "@ng-icons/heroicons/outline";
+import {
+	heroArrowUpRight,
+	heroClock,
+	heroDevicePhoneMobile,
+	heroEnvelope,
+	heroMap,
+	heroPhone,
+} from "@ng-icons/heroicons/outline";
 import {
 	svglAffinityPublisher,
 	svglJetbrainsSpace,
 	svglGithubLight,
 } from "@ng-icons/svgl";
+import { Mini_Contact_Details } from "../../../../../shared/models/contact.const";
+import { SectionHeader } from "../../../../../shared/components/section-header/section-header";
 @Component({
 	selector: "app-header",
-	imports: [Navbar, Gradient, Container, NgIcon],
+	imports: [Navbar, Gradient, Container, NgIcon, SectionHeader],
 	templateUrl: "./header.html",
 	styleUrl: "./header.scss",
 	viewProviders: [
@@ -25,6 +34,11 @@ import {
 			svglJetbrainsSpace,
 			svglGithubLight,
 			heroArrowUpRight,
+			heroMap,
+			heroDevicePhoneMobile,
+			heroPhone,
+			heroEnvelope,
+			heroClock,
 		}),
 	],
 })
@@ -46,4 +60,6 @@ export class Header {
 			link: "",
 		},
 	];
+
+	contactDetails = Mini_Contact_Details;
 }

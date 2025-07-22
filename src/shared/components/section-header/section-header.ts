@@ -1,9 +1,8 @@
 import { Component, input } from "@angular/core";
-import { Container } from "../container/container";
 
 @Component({
 	selector: "app-section-header",
-	imports: [Container],
+	imports: [],
 	templateUrl: "./section-header.html",
 	styleUrl: "./section-header.scss",
 })

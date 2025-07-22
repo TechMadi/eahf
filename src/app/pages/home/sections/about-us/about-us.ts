@@ -58,28 +58,34 @@ export class AboutUs {
 		photoUrl: string;
 	}[] = [
 		{
-			reason: "Peaceful Residential Setting",
-			photoUrl: "/assets/images/reasons/peaceful-home.jpg",
+			reason: "Peaceful Residential Care Setting",
+			photoUrl:
+				"https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg",
 		},
 		{
 			reason: "Home-cooked meals made with love",
-			photoUrl: "/assets/images/reasons/home-cooked-meals.jpg",
+			photoUrl:
+				"https://images.pexels.com/photos/3677150/pexels-photo-3677150.jpeg",
 		},
 		{
 			reason: "Caring, experienced team on site 24/7",
-			photoUrl: "/assets/images/reasons/staff-care.jpg",
+			photoUrl:
+				"https://images.pexels.com/photos/2026764/pexels-photo-2026764.jpeg",
 		},
 		{
 			reason: "Personalized care plans",
-			photoUrl: "/assets/images/reasons/personalized-care.jpg",
+			photoUrl:
+				"https://images.pexels.com/photos/6975193/pexels-photo-6975193.jpeg",
 		},
 		{
 			reason: "Warm and clean interiors",
-			photoUrl: "/assets/images/reasons/interior.jpg",
+			photoUrl:
+				"https://images.pexels.com/photos/18459206/pexels-photo-18459206.jpeg",
 		},
 		{
 			reason: "Affordable rates with premium care",
-			photoUrl: "/assets/images/reasons/affordable-care.jpg",
+			photoUrl:
+				"https://images.pexels.com/photos/33116703/pexels-photo-33116703.jpeg",
 		},
 	];
 }
