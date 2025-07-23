@@ -6,6 +6,8 @@ import {
 } from "../../../plus-grid/plus-grid";
 import { IMenu, NAV_LIST } from "../../../models/navbar.const";
 import { RouterModule } from "@angular/router";
+import { ScrollService } from "../../../services/scroll.service";
+
 @Component({
 	selector: "app-navbar-mobile-btn",
 	imports: [RouterModule],
@@ -49,9 +51,10 @@ export class MobileNavbarBtn {
 			<div class="px-4 py-6 flex flex-col gap-6">
 				@for (navLink of navLinks; track $index) {
 				<a
+					(click)="onNavClick(navLink, $event)"
 					[routerLink]="navLink.routerLink ?? ''"
 					[fragment]="navLink.fragment ?? ''"
-					class="text-base font-medium text-gray-950 animate-fade-in-down duration-150 ease-in-out delay-[100ms] tap-highlight-none"
+					class="text-base font-medium text-gray-950 animate-fade-in-down duration-150 ease-in-out delay-[100ms] tap-highlight-none cursor-pointer"
 				>
 					{{ navLink.label }}
 				</a>
@@ -67,6 +70,24 @@ export class MobileNavbarBtn {
 })
 export class MobileNavbar {
 	navLinks: IMenu[] = NAV_LIST;
+
+	constructor(private scrollService: ScrollService) {}
+
+	onNavClick(navLink: IMenu, event: Event): void {
+		if (navLink.fragment !== "") {
+			// Prevent default router navigation for fragments
+			event.preventDefault();
+
+			// Close mobile menu if needed
+			const mobileNav = document.getElementById("mobile-nav");
+			if (mobileNav) {
+				mobileNav.classList.add("hidden");
+			}
+
+			// Scroll to fragment with offset for fixed header
+			this.scrollService.scrollToFragment(navLink.fragment!, 80);
+		}
+	}
 }
 
 @Component({
@@ -77,9 +98,10 @@ export class MobileNavbar {
 			@for (navLink of navLinks; track $index) {
 			<app-plus-grid-item class="relative flex">
 				<a
+					(click)="onNavClick(navLink, $event)"
 					[routerLink]="navLink.routerLink ?? ''"
-					[fragment]="navLink.fragment"
-					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 "
+					[fragment]="navLink.fragment ?? ''"
+					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 cursor-pointer"
 				>
 					{{ navLink.label }}
 				</a>
@@ -91,6 +113,16 @@ export class MobileNavbar {
 })
 export class DesktopNavbar {
 	navLinks: IMenu[] = NAV_LIST;
+
+	constructor(private scrollService: ScrollService) {}
+
+	onNavClick(navLink: IMenu, event: Event): void {
+		if (navLink.fragment !== "") {
+			event.preventDefault();
+
+			this.scrollService.scrollToFragment(navLink.fragment!, 80);
+		}
+	}
 }
 
 @Component({

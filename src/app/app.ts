@@ -6,8 +6,14 @@ declare global {
 	}
 }
 
-import { Component, inject, OnInit } from "@angular/core";
-import { NavigationEnd, Router, RouterOutlet, Event } from "@angular/router";
+import { AfterViewInit, Component, inject, OnInit } from "@angular/core";
+import {
+	NavigationEnd,
+	Router,
+	RouterOutlet,
+	Event,
+	ActivatedRoute,
+} from "@angular/router";
 
 import { Footer } from "../shared/components/layout/footer/footer";
 import * as AOS from "aos";
@@ -21,6 +27,7 @@ import * as AOS from "aos";
 export class App implements OnInit {
 	protected title = "eaf-website";
 	router = inject(Router);
+	route = inject(ActivatedRoute);
 
 	ngOnInit() {
 		this.router.events.subscribe((event: Event) => {
