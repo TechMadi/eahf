@@ -1,0 +1,91 @@
+<div class="relative">
+	<app-gradient class="pb-8 rounded-b-4xl">
+		<app-container>
+			<app-navbar banner="Elderly Care"></app-navbar>
+		</app-container>
+		<!-- Hero -->
+		<div class="px-4 sm:px-6 lg:px-8">
+			<div
+				class="relative h-120 md:h-[80dvh] flex flex-col rounded-2xl overflow-hidden"
+			>
+				<!-- Background Image -->
+				<div
+					class="absolute inset-0 bg-[url('https://images.pexels.com/photos/33087353/pexels-photo-33087353.jpeg')] bg-cover bg-center bg-no-repeat"
+				></div>
+
+				<!-- Gradient Overlay -->
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/70 to-transparent"
+				></div>
+
+				<!-- Content -->
+				<div
+					class="relative space-y-4 mt-auto w-4/6 md:max-w-3xl ps-5 pb-5 md:ps-10 md:pb-10"
+				>
+					<h1 class="text-xl md:text-3xl lg:text-5xl text-cream-200">
+						Excellence in Care.
+					</h1>
+					<p class="text-cream-100 text-xl">
+						At Excellence Adult Family Home, we provide a warm, safe, and
+						nurturing environment for seniors who need personalized,
+						round-the-clock care.
+					</p>
+					<!-- <p class="text-cream-100 text-xl">
+						Located in the heart of Tacoma, WA, our cozy, family-style residence
+						offers more than just a place to stay - we offer a place to thrive.
+					</p> -->
+					<div class="actions flex gap-4 items-center">
+						<button class="btn btn-coral">Schedhule A Tour</button>
+						<a class="text-white text-sm flex items-center space-y-4"
+							>Explore Services
+							<ng-icon
+								class="text-sm"
+								name="heroArrowUpRight"
+							></ng-icon
+						></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Hero -->
+
+		<!-- <app-container> -->
+
+		<div class="px-4 sm:px-6 lg:px-8">
+			<app-section-header description="Get In Touch"> </app-section-header>
+			<div
+				class="grid bg-sage-900/80 rounded-2xl p-8 sm:grid-cols-2 lg:grid-cols-4 items-start gap-12"
+			>
+				@for (contact of contactDetails; track $index) {
+				<!-- Icon Block -->
+				<a
+					[href]="contact.href"
+					class="hover:cursor-pointer"
+				>
+					<ng-icon
+						color="#f28a72"
+						[name]="contact.icon"
+						class="text-xl shrink-0 size-9 text-cream-800"
+					></ng-icon>
+
+					<div
+						class="bg-linear-to-r from-cream-200 via-cream-50 to-transparent h-0.5 mt-6"
+					>
+						<div class="bg-cream-400 w-9 h-0.5"></div>
+					</div>
+					<div class="mt-5">
+						<h3 class="text-lg font-semibold text-coral-300">
+							{{contact.label}}
+						</h3>
+						<p class="mt-1 text-cream-600">{{contact.value}}</p>
+						<p class="mt-1 text-cream-600">{{contact.value2}}</p>
+					</div>
+				</a>
+				<!-- End Icon Block -->
+				}
+			</div>
+		</div>
+
+		<!-- </app-container> -->
+	</app-gradient>
+</div>
