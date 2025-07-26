@@ -178,16 +178,19 @@
 			<img
 				data-aos="fade-up"
 				data-aos-duration="800"
+				placeholder="blur"
 				[alt]="reason + 'image'"
-				[src]="reason.photoUrl"
+				[ngSrc]="reason.photoUrl"
+				fill
 				class="absolute inset-x-0 top-0 aspect-square w-full object-cover"
+				priority
 			/>
 			<div
 				aria-hidden="true"
 				class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black from-[calc(7/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
 			></div>
 			<figure class="relative p-10">
-				<blockquote class="border-t border-dashed border-cream-100 pt-6">
+				<blockquote class="pt-6">
 					<p class="relative text-xl/7 text-white">
 						<!-- <span
 							aria-hidden="true"
@@ -202,15 +205,15 @@
 						> -->
 					</p>
 				</blockquote>
-				<!-- <figcaption class="mt-6 border-t border-white/20 pt-6">
-					<p class="text-sm/6 font-medium text-white">Jane Shuyen</p>
+				<figcaption class="mt-6 border-t border-white/20 pt-6">
+					<!-- <p class="text-sm/6 font-medium text-white">{{reason.reason}}</p> -->
 					<p class="text-sm/6 font-medium">
 						<span
 							class="bg-gradient-to-r from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] bg-clip-text text-transparent"
-							>Vp , Golden Zeal</span
+							>{{reason.reasonDescription}}</span
 						>
 					</p>
-				</figcaption> -->
+				</figcaption>
 			</figure>
 		</div>
 		}

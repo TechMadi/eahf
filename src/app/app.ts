@@ -17,15 +17,17 @@ import {
 
 import { Footer } from "../shared/components/layout/footer/footer";
 import * as AOS from "aos";
+import { Loader } from "../shared/components/loader/loader";
 
 @Component({
 	selector: "app-root",
-	imports: [RouterOutlet, Footer],
+	imports: [RouterOutlet, Footer, Loader],
 	templateUrl: "./app.html",
 	styleUrl: "./app.scss",
 })
 export class App implements OnInit {
 	protected title = "eaf-website";
+	showLoader: boolean = true;
 	router = inject(Router);
 	route = inject(ActivatedRoute);
 
