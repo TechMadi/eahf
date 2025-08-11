@@ -17,5 +17,5 @@ export const NAV_LIST: IMenu[] = [
 	{ routerLink: "/", label: "Home" },
 	{ fragment: "what-we-do", label: "What we do" },
 	{ fragment: "about-us", label: "About Us" },
-	{ routerLink: "/contact-us", label: "Contact" },
+	{ routerLink: "contact-us", label: "Contact" },
 ];
