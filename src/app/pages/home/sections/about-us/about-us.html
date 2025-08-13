@@ -1,3 +1,27 @@
+<app-container class="my-8 md:my-16">
+	<app-section-header title="Our Gallery"> </app-section-header>
+
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
+		@for (photo of galleryImges; track $index) {
+
+		<div
+			class="relative flex aspect-9/16 flex-col justify-end overflow-hidden rounded-3xl"
+		>
+			<img
+				data-aos="fade-up"
+				data-aos-duration="800"
+				placeholder="blur"
+				[alt]="photo.alt + 'image'"
+				[ngSrc]="photo.image"
+				fill
+				class="absolute inset-x-0 top-0 aspect-square w-full object-cover"
+				priority
+			/>
+		</div>
+		}
+	</div>
+</app-container>
+
 <app-container
 	class="bg-coral-400/20 py-16"
 	data-aos="fade-right"
@@ -165,7 +189,7 @@
 	<div
 		data-aos="fade-up"
 		data-aos-duration="800"
-		class="flex space-x-6 max-w-2xl lg:max-w-6xl my-16 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
+		class="flex space-x-6 my-16 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
 	>
 		@for (reason of reasonsToChooseUs; track $index) {
 		<div
@@ -215,5 +239,3 @@
 		}
 	</div>
 </app-container>
-
-<app-container class="my-8 md:my-16"></app-container>

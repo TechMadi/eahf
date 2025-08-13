@@ -56,4 +56,35 @@ export class AboutUs {
 	];
 
 	reasonsToChooseUs: IReason[] = ReasonsData;
+
+	galleryImges: {
+		image: string;
+		alt: string;
+	}[] = [
+		{
+			image: "/images/elder_airview.jpg",
+			alt: "Airview",
+		},
+
+		{
+			image: "/images/elder_dinning_2.jpg",
+			alt: "Dinning Area",
+		},
+		{
+			image: "/images/elder_outdoor_2.jpg",
+			alt: "Outdoor Area",
+		},
+		{
+			image: "/images/elder_service.jpg",
+			alt: "Services",
+		},
+		{
+			image: "/images/elder_outdoor.JPG",
+			alt: "Outdoor Area",
+		},
+		{
+			image: "/images/elder_sitting_2.jpg",
+			alt: "Outdoor Area",
+		},
+	];
 }

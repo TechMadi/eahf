@@ -40,7 +40,7 @@ export const ReasonsData: {
 		reason: "Warm and Clean Interiors",
 		reasonDescription:
 			"From cozy rooms to spotless shared spaces, we prioritize cleanliness, safety, and comfort.",
-		photoUrl: "/assets/images/reasons/clean-interiors.jpg",
+		photoUrl: "/images/elder_service.jpg",
 	},
 	{
 		reason: "Affordable Rates with Premium Care",
