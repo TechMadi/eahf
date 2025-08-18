@@ -7,6 +7,7 @@ import { Component, input } from "@angular/core";
  */
 @Component({
 	selector: "app-plus-grid-icon",
+	standalone: true,
 	imports: [NgClass],
 	template: ` <svg
 		viewBox="0 0 15 15"
@@ -40,6 +41,7 @@ export class PlusGridIcon {
  */
 @Component({
 	selector: "app-plus-grid-row",
+	standalone: true,
 	imports: [NgClass],
 	template: `<div
 		[ngClass]="[
@@ -75,6 +77,7 @@ export class PlusGridRow {
  */
 @Component({
 	selector: "app-plus-grid-item",
+	standalone: true,
 	imports: [PlusGridIcon],
 	template: `
 		<div class="group/item relative">
@@ -109,6 +112,7 @@ export class PlusGridItem {
  */
 @Component({
 	selector: "app-plus-grid",
+	standalone: true,
 	imports: [NgClass],
 	templateUrl: "./plus-grid.html",
 	styleUrl: "./plus-grid.scss",

@@ -25,6 +25,7 @@ import { Mini_Contact_Details } from "../../../../../shared/models/contact.const
 import { SectionHeader } from "../../../../../shared/components/section-header/section-header";
 @Component({
 	selector: "app-header",
+	standalone: true,
 	imports: [Navbar, Gradient, Container, NgIcon, SectionHeader],
 	templateUrl: "./header.html",
 	styleUrl: "./header.scss",

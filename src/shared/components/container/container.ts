@@ -3,6 +3,7 @@ import { Component, input } from "@angular/core";
 
 @Component({
 	selector: "app-container",
+	standalone: true,
 	imports: [],
 	templateUrl: "./container.html",
 	styleUrl: "./container.scss",
@@ -15,6 +16,7 @@ export class Container {
 
 @Component({
 	selector: "app-gradient",
+	standalone: true,
 	imports: [NgClass],
 	template: `
 		<div

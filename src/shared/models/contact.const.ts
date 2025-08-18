@@ -32,8 +32,8 @@ export const CONTACT_DETAILS: ContactType[] = [
 	{
 		label: "Email",
 		icon: "MailIcon",
-		value: "excellenceafh22@gmail.com",
-		href: "mailto:excellenceafh22@gmail.com",
+		value: "info@eafhome.us",
+		href: "mailto:info@eafhome.us",
 	},
 ];
 
@@ -61,7 +61,7 @@ export const Mini_Contact_Details: ContactType[] = [
 	{
 		label: "Drop an email",
 		icon: "heroEnvelope",
-		value: "excellenceafh22@gmail.com",
-		href: "mailto:excellenceafh22@gmail.com",
+		value: "info@eafhome.us",
+		href: "mailto:info@eafhome.us",
 	},
 ];
