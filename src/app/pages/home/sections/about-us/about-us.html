@@ -1,3 +1,27 @@
+<app-container class="my-8 md:my-16">
+	<app-section-header title="Our Gallery"> </app-section-header>
+
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
+		@for (photo of galleryImges; track $index) {
+
+		<div
+			class="relative flex aspect-9/16 flex-col justify-end overflow-hidden rounded-3xl"
+		>
+			<img
+				data-aos="fade-up"
+				data-aos-duration="800"
+				placeholder="blur"
+				[alt]="photo.alt + 'image'"
+				[ngSrc]="photo.image"
+				fill
+				class="absolute inset-x-0 top-0 aspect-square w-full object-cover"
+				priority
+			/>
+		</div>
+		}
+	</div>
+</app-container>
+
 <app-container
 	class="bg-coral-400/20 py-16"
 	data-aos="fade-right"
@@ -79,18 +103,14 @@
 								well-being - all within a loving home environment.
 							</p>
 						</blockquote>
-						<figcaption class="mt-10">
+						<figcaption class="mt-10 flex space-x-4 justify-start items-center">
 							<img
-								alt="Phobia"
-								loading="lazy"
-								width="184"
-								height="36"
-								decoding="async"
-								data-nimg="1"
+								alt="Logo"
 								style="color: transparent"
-								class="rounded-full"
+								class="rounded-full object-cover w-12 h-12"
 								src="https://images.pexels.com/photos/6148908/pexels-photo-6148908.jpeg"
 							/>
+							<p>Excelence Adult Family Home</p>
 						</figcaption>
 					</figure>
 				</div>
@@ -169,7 +189,7 @@
 	<div
 		data-aos="fade-up"
 		data-aos-duration="800"
-		class="flex space-x-6 max-w-2xl lg:max-w-6xl my-16 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
+		class="flex space-x-6 my-16 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
 	>
 		@for (reason of reasonsToChooseUs; track $index) {
 		<div
@@ -178,16 +198,19 @@
 			<img
 				data-aos="fade-up"
 				data-aos-duration="800"
+				placeholder="blur"
 				[alt]="reason + 'image'"
-				[src]="reason.photoUrl"
+				[ngSrc]="reason.photoUrl"
+				fill
 				class="absolute inset-x-0 top-0 aspect-square w-full object-cover"
+				priority
 			/>
 			<div
 				aria-hidden="true"
 				class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black from-[calc(7/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
 			></div>
 			<figure class="relative p-10">
-				<blockquote class="border-t border-dashed border-cream-100 pt-6">
+				<blockquote class="pt-6">
 					<p class="relative text-xl/7 text-white">
 						<!-- <span
 							aria-hidden="true"
@@ -202,15 +225,15 @@
 						> -->
 					</p>
 				</blockquote>
-				<!-- <figcaption class="mt-6 border-t border-white/20 pt-6">
-					<p class="text-sm/6 font-medium text-white">Jane Shuyen</p>
+				<figcaption class="mt-6 border-t border-white/20 pt-6">
+					<!-- <p class="text-sm/6 font-medium text-white">{{reason.reason}}</p> -->
 					<p class="text-sm/6 font-medium">
 						<span
 							class="bg-gradient-to-r from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] bg-clip-text text-transparent"
-							>Vp , Golden Zeal</span
+							>{{reason.reasonDescription}}</span
 						>
 					</p>
-				</figcaption> -->
+				</figcaption>
 			</figure>
 		</div>
 		}

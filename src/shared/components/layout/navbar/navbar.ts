@@ -52,8 +52,10 @@ export class MobileNavbarBtn {
 				@for (navLink of navLinks; track $index) {
 				<a
 					(click)="onNavClick(navLink, $event)"
-					[routerLink]="navLink.routerLink ?? ''"
-					[fragment]="navLink.fragment ?? ''"
+					[routerLink]="navLink.routerLink || undefined"
+					[fragment]="navLink.routerLink ? (navLink.fragment || undefined) : undefined"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: navLink.routerLink === '/' }"
 					class="text-base font-medium text-gray-950 animate-fade-in-down duration-150 ease-in-out delay-[100ms] tap-highlight-none cursor-pointer"
 				>
 					{{ navLink.label }}
@@ -74,7 +76,8 @@ export class MobileNavbar {
 	constructor(private scrollService: ScrollService) {}
 
 	onNavClick(navLink: IMenu, event: Event): void {
-		if (navLink.fragment !== "") {
+		// Handle fragment-only navigation (no routerLink)
+		if (navLink.fragment && !navLink.routerLink) {
 			// Prevent default router navigation for fragments
 			event.preventDefault();
 
@@ -85,8 +88,9 @@ export class MobileNavbar {
 			}
 
 			// Scroll to fragment with offset for fixed header
-			this.scrollService.scrollToFragment(navLink.fragment!, 80);
+			this.scrollService.scrollToFragment(navLink.fragment, 80);
 		}
+		// For routerLink navigation, let Angular Router handle it normally
 	}
 }
 
@@ -99,8 +103,10 @@ export class MobileNavbar {
 			<app-plus-grid-item class="relative flex">
 				<a
 					(click)="onNavClick(navLink, $event)"
-					[routerLink]="navLink.routerLink ?? ''"
-					[fragment]="navLink.fragment ?? ''"
+					[routerLink]="navLink.routerLink || undefined"
+					[fragment]="navLink.routerLink ? (navLink.fragment || undefined) : undefined"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: navLink.routerLink === '/' }"
 					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 cursor-pointer"
 				>
 					{{ navLink.label }}
@@ -117,11 +123,13 @@ export class DesktopNavbar {
 	constructor(private scrollService: ScrollService) {}
 
 	onNavClick(navLink: IMenu, event: Event): void {
-		if (navLink.fragment !== "") {
+		// Handle fragment-only navigation (no routerLink)
+		if (navLink.fragment && !navLink.routerLink) {
 			event.preventDefault();
 
-			this.scrollService.scrollToFragment(navLink.fragment!, 80);
+			this.scrollService.scrollToFragment(navLink.fragment, 80);
 		}
+		// For routerLink navigation, let Angular Router handle it normally
 	}
 }
 

@@ -26,6 +26,9 @@ importers:
       '@angular/router':
         specifier: ^20.0.0
         version: 20.1.2(@angular/common@20.1.2(@angular/core@20.1.2(@angular/compiler@20.1.2)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.2(@angular/compiler@20.1.2)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@20.1.2(@angular/common@20.1.2(@angular/core@20.1.2(@angular/compiler@20.1.2)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.2(@angular/compiler@20.1.2)(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
+      '@emailjs/browser':
+        specifier: ^4.4.1
+        version: 4.4.1
       '@ng-icons/core':
         specifier: ^32.1.0
         version: 32.1.0(@angular/common@20.1.2(@angular/core@20.1.2(@angular/compiler@20.1.2)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.2(@angular/compiler@20.1.2)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
@@ -376,6 +379,10 @@ packages:
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
+
+  '@emailjs/browser@4.4.1':
+    resolution: {integrity: sha512-DGSlP9sPvyFba3to2A50kDtZ+pXVp/0rhmqs2LmbMS3I5J8FSOgLwzY2Xb4qfKlOVHh29EAutLYwe5yuEZmEFg==}
+    engines: {node: '>=14.0.0'}
 
   '@esbuild/aix-ppc64@0.25.5':
     resolution: {integrity: sha512-9o3TMmpmftaCMepOdA5k/yDw8SfInyzWWTjYTFCX3kPSDJMROQTb8jg+h9Cnwnmm1vOzvxN7gIfB5V2ewpjtGA==}
@@ -3430,6 +3437,8 @@ snapshots:
       '@babel/helper-validator-identifier': 7.27.1
 
   '@colors/colors@1.5.0': {}
+
+  '@emailjs/browser@4.4.1': {}
 
   '@esbuild/aix-ppc64@0.25.5':
     optional: true

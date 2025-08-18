@@ -1,0 +1,11 @@
+<section class="bg-sage-950">
+	<div
+		class="fixed inset-0 z-50 flex flex-col justify-end p-8 bg-coral-700"
+		[style.width.%]="progress()"
+	>
+		<!-- Bottom Right Percentage -->
+		<div class="text-black text-[8rem] font-bold leading-none text-right">
+			{{ progress() }}<span class="align-baseline">%</span>
+		</div>
+	</div>
+</section>

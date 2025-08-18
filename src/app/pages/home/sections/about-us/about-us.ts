@@ -9,10 +9,12 @@ import {
 	simpleWorldhealthorganization,
 } from "@ng-icons/simple-icons";
 import { SectionHeader } from "../../../../../shared/components/section-header/section-header";
+import { IReason, ReasonsData } from "../../../../../shared/models/data.const";
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
 	selector: "app-about-us",
-	imports: [Container, NgIcon, SectionHeader],
+	imports: [Container, NgIcon, SectionHeader, NgOptimizedImage],
 	templateUrl: "./about-us.html",
 	styleUrl: "./about-us.scss",
 	viewProviders: [
@@ -53,39 +55,36 @@ export class AboutUs {
 		},
 	];
 
-	reasonsToChooseUs: {
-		reason: string;
-		photoUrl: string;
+	reasonsToChooseUs: IReason[] = ReasonsData;
+
+	galleryImges: {
+		image: string;
+		alt: string;
 	}[] = [
 		{
-			reason: "Peaceful Residential Care Setting",
-			photoUrl:
-				"https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg",
+			image: "/images/elder_airview.jpg",
+			alt: "Airview",
+		},
+
+		{
+			image: "/images/elder_dinning_2.jpg",
+			alt: "Dinning Area",
 		},
 		{
-			reason: "Home-cooked meals made with love",
-			photoUrl:
-				"https://images.pexels.com/photos/3677150/pexels-photo-3677150.jpeg",
+			image: "/images/elder_outdoor_2.jpg",
+			alt: "Outdoor Area",
 		},
 		{
-			reason: "Caring, experienced team on site 24/7",
-			photoUrl:
-				"https://images.pexels.com/photos/2026764/pexels-photo-2026764.jpeg",
+			image: "/images/elder_service.jpg",
+			alt: "Services",
 		},
 		{
-			reason: "Personalized care plans",
-			photoUrl:
-				"https://images.pexels.com/photos/6975193/pexels-photo-6975193.jpeg",
+			image: "/images/elder_outdoor.JPG",
+			alt: "Outdoor Area",
 		},
 		{
-			reason: "Warm and clean interiors",
-			photoUrl:
-				"https://images.pexels.com/photos/18459206/pexels-photo-18459206.jpeg",
-		},
-		{
-			reason: "Affordable rates with premium care",
-			photoUrl:
-				"https://images.pexels.com/photos/33116703/pexels-photo-33116703.jpeg",
+			image: "/images/elder_sitting_2.jpg",
+			alt: "Outdoor Area",
 		},
 	];
 }
