@@ -1,0 +1,344 @@
+<div class="relative pb-8 rounded-b-4xl">
+	<!-- <app-gradient class="pb-8 rounded-b-4xl"> -->
+	<app-container>
+		<app-navbar banner="Elderly Care"></app-navbar>
+	</app-container>
+	<!-- </app-gradient> -->
+	<section
+		data-aos="fade-up"
+		data-aos-duration="1000"
+	>
+		<app-container class="my-8 md:my-16">
+			<app-section-header
+				title="Schedule a Consultation"
+				description="Book a one-on-one consultation with our team. We're happy to answer your questions and guide you through every step."
+			></app-section-header>
+
+			<!-- Success Message -->
+			@if (submissionSuccess) {
+			<div class="mb-8 rounded-2xl bg-sage-50 border border-sage-200 p-6">
+				<div class="flex items-center space-x-3">
+					<ng-icon
+						name="heroCheckCircle"
+						class="text-sage-600 text-2xl"
+					></ng-icon>
+					<div>
+						<h3 class="text-lg font-semibold text-sage-800">
+							Consultation Scheduled Successfully!
+						</h3>
+						<p class="text-sage-700">
+							We'll contact you within 24 hours to confirm your appointment
+							details.
+						</p>
+					</div>
+				</div>
+			</div>
+			}
+
+			<div class="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2 my-4">
+				<div class="col-span-1">
+					<div>
+						<h2 class="text-base font-semibold text-sage-950">Our Offices</h2>
+
+						<ul
+							class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2"
+							role="list"
+						>
+							<li>
+								<strong>Tacoma</strong>
+								<br />
+								6808 Homestead Ave, Tacoma, WA 98404
+							</li>
+						</ul>
+					</div>
+
+					<div
+						class="mt-16 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px"
+					>
+						<h2 class="text-base font-semibold text-sage-950">
+							Our Offices Hours
+						</h2>
+
+						<dl class="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+							<div>
+								<dt class="font-semibold">Weekday</dt>
+								<dd>
+									<span class="text-neutral-600"
+										>Monday - Friday: 9:00 AM - 6:00 PM</span
+									>
+								</dd>
+							</div>
+							<div>
+								<dt class="font-semibold">Weekends</dt>
+								<dd>
+									<span class="text-neutral-600"
+										>Saturday: 10:00 AM - 4:00 PM</span
+									>
+								</dd>
+							</div>
+						</dl>
+					</div>
+					<div
+						class="mt-16 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px"
+					>
+						<h2 class="text-base font-semibold text-sage-950">
+							Our Time response
+						</h2>
+
+						<dl class="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+							<div>
+								<dt class="font-semibold">Response time</dt>
+								<dd>
+									Expect a response within 24 -49 hrs
+									<a
+										class="text-neutral-600"
+										href="tel:2535073970"
+										>(253) 507-3970</a
+									>
+								</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+				<div class="col-span-1 my-auto px-10">
+					<form
+						action=""
+						[formGroup]="contactForm"
+						subm
+					>
+						<h2 class="text-base font-semibold text-sage-950">
+							Schedule a Consultation
+						</h2>
+						<div class="isolate mt-6 rounded-2xl space-y-4">
+							<!-- Service Selection -->
+							<div class="group relative transition-all">
+								<select
+									class="peer input rounded-2xl"
+									formControlName="service"
+									required
+								>
+									<option value="">Select a service</option>
+									@for (service of serviceOptions; track service.value) {
+									<option [value]="service.value">{{ service.label }}</option>
+									}
+								</select>
+								<label
+									class="input-label"
+									for="service"
+									>Which of our services are you interested in<span
+										class="text-red-500"
+										>*</span
+									></label
+								>
+								@if (getFieldError('service')) {
+								<p class="mt-1 text-sm text-coral-600">
+									{{ getFieldError('service') }}
+								</p>
+								}
+							</div>
+							<!-- Name Field -->
+							<div class="group relative transition-all">
+								<input
+									class="peer input rounded-2xl"
+									placeholder=""
+									autocomplete="name"
+									type="text"
+									formControlName="name"
+									required
+								/>
+								<label
+									class="input-label"
+									for="name"
+									>Full Name <span class="text-red-500">*</span></label
+								>
+								@if (getFieldError('name')) {
+								<p class="mt-1 text-sm text-coral-600">
+									{{ getFieldError('name') }}
+								</p>
+								}
+							</div>
+
+							<!-- Preferred Contact Method -->
+							<div class="group relative transition-all">
+								<select
+									class="peer input rounded-2xl"
+									formControlName="preferredContact"
+									required
+								>
+									<option value="">Select preferred contact method</option>
+									@for (contact of contactPreferences; track contact.value) {
+									<option [value]="contact.value">{{ contact.label }}</option>
+									}
+								</select>
+								<label
+									class="input-label"
+									for="preferredContact"
+									>Preferred Contact Method
+									<span class="text-red-500">*</span></label
+								>
+								@if (getFieldError('preferredContact')) {
+								<p class="mt-1 text-sm text-coral-600">
+									{{ getFieldError('preferredContact') }}
+								</p>
+								}
+							</div>
+							<!-- Email and Phone Row -->
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<!-- Email Field -->
+								<div class="group relative transition-all">
+									<input
+										class="peer input rounded-2xl"
+										placeholder=""
+										autocomplete="email"
+										type="email"
+										formControlName="email"
+										required
+									/>
+									<label
+										class="input-label"
+										for="email"
+										>Email Address <span class="text-red-500">*</span></label
+									>
+									@if (getFieldError('email')) {
+									<p class="mt-1 text-sm text-coral-600">
+										{{ getFieldError('email') }}
+									</p>
+									}
+								</div>
+
+								<!-- Phone Field -->
+								<div class="group relative transition-all">
+									<input
+										class="peer input rounded-2xl"
+										placeholder=""
+										autocomplete="tel"
+										type="tel"
+										formControlName="phone"
+									/>
+									<label
+										class="input-label"
+										for="phone"
+										>Phone Number</label
+									>
+								</div>
+							</div>
+
+							<!-- Date and Time Row -->
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<!-- Preferred Date -->
+								<div class="group relative transition-all">
+									<input
+										class="peer input rounded-2xl"
+										type="date"
+										formControlName="preferredDate"
+										[min]="getMinDate()"
+									/>
+									<label
+										class="input-label"
+										for="preferredDate"
+										>Preferred Date</label
+									>
+								</div>
+
+								<!-- Preferred Time -->
+								<div class="group relative transition-all">
+									<select
+										class="peer input rounded-2xl"
+										formControlName="preferredTime"
+									>
+										<option value="">Select preferred time</option>
+										@for (timeSlot of timeSlots; track timeSlot) {
+										<option [value]="timeSlot">{{ timeSlot }}</option>
+										}
+									</select>
+									<label
+										class="input-label"
+										for="preferredTime"
+										>Preferred Time</label
+									>
+								</div>
+							</div>
+
+							<!-- Message/Additional Information -->
+							<div class="group relative transition-all">
+								<textarea
+									class="peer input h-30 resize-none"
+									placeholder=""
+									formControlName="message"
+									rows="4"
+									required
+								></textarea>
+								<label
+									class="input-label"
+									for="message"
+									>More information you would like us to know
+									<span class="text-red-500">*</span></label
+								>
+								@if (getFieldError('message')) {
+								<p class="mt-1 text-sm text-coral-600">
+									{{ getFieldError('message') }}
+								</p>
+								}
+							</div>
+						</div>
+						<div class="my-4 md:my-8">
+							<button
+								type="submit"
+								class="btn btn-coral"
+								[disabled]="isSubmitting || contactForm.invalid"
+								(click)="submit()"
+							>
+								@if (isSubmitting) {
+								<span class="flex items-center justify-center">
+									<svg
+										class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+									>
+										<circle
+											class="opacity-25"
+											cx="12"
+											cy="12"
+											r="10"
+											stroke="currentColor"
+											stroke-width="4"
+										></circle>
+										<path
+											class="opacity-75"
+											fill="currentColor"
+											d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+										></path>
+									</svg>
+									Submitting...
+								</span>
+								} @else { Schedule Consultation }
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Error Message -->
+			@if (submissionError) {
+			<div class="mb-8 rounded-2xl bg-coral-50 border border-coral-200 p-6">
+				<div class="flex items-center space-x-3">
+					<ng-icon
+						name="heroExclamationTriangle"
+						class="text-coral-600 text-2xl"
+					></ng-icon>
+					<div>
+						<h3 class="text-lg font-semibold text-coral-800">
+							Please Complete Required Fields
+						</h3>
+						<p class="text-coral-700">
+							Please fill in all required information to schedule your
+							consultation.
+						</p>
+					</div>
+				</div>
+			</div>
+			}
+		</app-container>
+	</section>
+</div>

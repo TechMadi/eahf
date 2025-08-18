@@ -1,0 +1,19 @@
+// Active navigation link styles
+.active {
+	@apply text-coral-600 font-semibold;
+	
+	// Desktop active styles
+	&.flex.items-center {
+		@apply bg-coral-50 border-b-2 border-coral-500;
+	}
+	
+	// Mobile active styles
+	&.text-base {
+		@apply bg-coral-50 px-4 py-2 rounded-md;
+	}
+}
+
+// Hover states for non-active links
+a:not(.active):hover {
+	@apply text-coral-500 transition-colors duration-200;
+}

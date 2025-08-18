@@ -16,7 +16,7 @@ import {
 } from "@angular/router";
 
 import { Footer } from "../shared/components/layout/footer/footer";
-import * as AOS from "aos";
+import { AosService } from "../shared/services/aos.service";
 import { Loader } from "../shared/components/loader/loader";
 
 @Component({
@@ -30,14 +30,17 @@ export class App implements OnInit {
 	showLoader: boolean = true;
 	router = inject(Router);
 	route = inject(ActivatedRoute);
+	aosService = inject(AosService);
 
 	ngOnInit() {
 		this.router.events.subscribe((event: Event) => {
 			if (event instanceof NavigationEnd) {
-				setTimeout(() => window.HSStaticMethods.autoInit(), 100);
+				setTimeout(() => {
+					window.HSStaticMethods.autoInit();
+					// Refresh AOS after route changes
+					this.aosService.refresh();
+				}, 100);
 			}
 		});
-
-		AOS.init();
 	}
 }

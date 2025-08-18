@@ -11,11 +11,13 @@ export enum AppRoute {
 export enum AppFragment {
 	WhatWeDo = "what-we-do",
 	AboutUs = "about-us",
+	BookSchedule = "book-schedule",
 }
 
 export const NAV_LIST: IMenu[] = [
 	{ routerLink: "/", label: "Home" },
-	{ fragment: "what-we-do", label: "What we do" },
-	{ fragment: "about-us", label: "About Us" },
-	{ routerLink: "contact-us", label: "Contact" },
+	{ routerLink: "/", fragment: "what-we-do", label: "What we do" },
+	{ routerLink: "/", fragment: "about-us", label: "About Us" },
+	{ routerLink: "/book", label: "Book Schedule" },
+	{ routerLink: "/contact-us", label: "Contact" },
 ];
