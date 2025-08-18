@@ -10,6 +10,7 @@ import { ScrollService } from "../../../services/scroll.service";
 
 @Component({
 	selector: "app-navbar-mobile-btn",
+	standalone: true,
 	imports: [RouterModule],
 	template: `
 		<button
@@ -42,6 +43,7 @@ export class MobileNavbarBtn {
 
 @Component({
 	selector: "app-navbar-mobile",
+	standalone: true,
 	imports: [RouterModule],
 	template: `
 		<div
@@ -53,7 +55,9 @@ export class MobileNavbarBtn {
 				<a
 					(click)="onNavClick(navLink, $event)"
 					[routerLink]="navLink.routerLink || undefined"
-					[fragment]="navLink.routerLink ? (navLink.fragment || undefined) : undefined"
+					[fragment]="
+						navLink.routerLink ? navLink.fragment || undefined : undefined
+					"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact: navLink.routerLink === '/' }"
 					class="text-base font-medium text-gray-950 animate-fade-in-down duration-150 ease-in-out delay-[100ms] tap-highlight-none cursor-pointer"
@@ -96,6 +100,7 @@ export class MobileNavbar {
 
 @Component({
 	selector: "app-navbar-desktop",
+	standalone: true,
 	imports: [PlusGridItem, RouterModule],
 	template: `
 		<nav class="relative hidden lg:flex">
@@ -104,7 +109,9 @@ export class MobileNavbar {
 				<a
 					(click)="onNavClick(navLink, $event)"
 					[routerLink]="navLink.routerLink || undefined"
-					[fragment]="navLink.routerLink ? (navLink.fragment || undefined) : undefined"
+					[fragment]="
+						navLink.routerLink ? navLink.fragment || undefined : undefined
+					"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ exact: navLink.routerLink === '/' }"
 					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 cursor-pointer"
@@ -135,6 +142,7 @@ export class DesktopNavbar {
 
 @Component({
 	selector: "app-navbar",
+	standalone: true,
 	imports: [
 		PlusGrid,
 		PlusGridItem,

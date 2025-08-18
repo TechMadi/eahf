@@ -3,6 +3,7 @@ import { ScrollService } from "../../services/scroll.service";
 
 @Component({
 	selector: "app-scroll-to-top",
+	standalone: true,
 	template: `
 		@if(showScrollButton){<button
 			(click)="scrollToTop()"
