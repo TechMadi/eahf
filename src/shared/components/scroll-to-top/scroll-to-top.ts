@@ -48,6 +48,21 @@ import { ScrollService } from "../../services/scroll.service";
 					bottom: 1.5rem !important;
 					right: 1.5rem !important;
 					z-index: 9999 !important;
+					/* Ensure button is always visible on mobile */
+					opacity: 1 !important;
+					/* Add a subtle shadow for better visibility */
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+					/* Make button slightly larger on mobile for better touch targets */
+					padding: 0.875rem !important;
+				}
+			}
+
+			/* Additional mobile optimizations */
+			@media (max-width: 480px) {
+				button {
+					bottom: 1rem !important;
+					right: 1rem !important;
+					padding: 0.75rem !important;
 				}
 			}
 		`,
@@ -71,8 +86,16 @@ export class ScrollToTopComponent implements OnInit, OnDestroy {
 		this.checkScrollPosition();
 	}
 
+	@HostListener("window:resize")
+	onWindowResize(): void {
+		this.checkScrollPosition();
+	}
+
 	private checkScrollPosition(): void {
-		this.showScrollButton = window.pageYOffset > 300;
+		// Show button sooner on mobile devices
+		const isMobile = window.innerWidth <= 768;
+		const threshold = isMobile ? 150 : 300;
+		this.showScrollButton = window.pageYOffset > threshold;
 	}
 
 	scrollToTop(): void {
