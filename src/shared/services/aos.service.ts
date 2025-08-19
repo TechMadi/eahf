@@ -100,7 +100,7 @@ export class AosService {
 		AOS.init({
 			...this.defaultConfig,
 			// Disable AOS on small devices for better perf
-			disable: window.innerWidth < 768 ? "mobile" : false,
+			//disable: window.innerWidth < 768 ? "mobile" : false,
 		});
 	}
 
