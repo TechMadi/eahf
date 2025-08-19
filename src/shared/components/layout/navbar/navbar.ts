@@ -1,12 +1,19 @@
-import { Component, input, forwardRef } from "@angular/core";
+import { Component, input, forwardRef, OnInit, OnDestroy } from "@angular/core";
 import {
 	PlusGrid,
 	PlusGridItem,
 	PlusGridRow,
 } from "../../../plus-grid/plus-grid";
 import { IMenu, NAV_LIST } from "../../../models/navbar.const";
-import { RouterModule } from "@angular/router";
+import {
+	RouterModule,
+	Router,
+	NavigationEnd,
+	ActivatedRoute,
+} from "@angular/router";
 import { ScrollService } from "../../../services/scroll.service";
+import { filter, takeUntil } from "rxjs/operators";
+import { Subject } from "rxjs";
 
 @Component({
 	selector: "app-navbar-mobile-btn",
@@ -58,8 +65,7 @@ export class MobileNavbarBtn {
 					[fragment]="
 						navLink.routerLink ? navLink.fragment || undefined : undefined
 					"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: navLink.routerLink === '/' }"
+					[class.active]="isActive(navLink)"
 					class="text-base font-medium text-gray-950 animate-fade-in-down duration-150 ease-in-out delay-[100ms] tap-highlight-none cursor-pointer"
 				>
 					{{ navLink.label }}
@@ -74,10 +80,64 @@ export class MobileNavbarBtn {
 	`,
 	styleUrl: "./navbar.scss",
 })
-export class MobileNavbar {
+export class MobileNavbar implements OnInit, OnDestroy {
 	navLinks: IMenu[] = NAV_LIST;
+	private destroy$ = new Subject<void>();
+	currentRoute = "";
+	currentFragment = "";
 
-	constructor(private scrollService: ScrollService) {}
+	constructor(
+		private scrollService: ScrollService,
+		private router: Router,
+		private route: ActivatedRoute,
+	) {}
+
+	ngOnInit(): void {
+		// Set initial state
+		this.updateActiveState();
+
+		this.router.events
+			.pipe(
+				filter((event) => event instanceof NavigationEnd),
+				takeUntil(this.destroy$),
+			)
+			.subscribe(() => {
+				this.updateActiveState();
+			});
+
+		// Also listen for fragment changes
+		this.route.fragment.pipe(takeUntil(this.destroy$)).subscribe((fragment) => {
+			this.currentFragment = fragment || "";
+		});
+	}
+
+	ngOnDestroy(): void {
+		this.destroy$.next();
+		this.destroy$.complete();
+	}
+
+	private updateActiveState(): void {
+		this.currentRoute = this.router.url.split("#")[0];
+		this.currentFragment = this.router.url.split("#")[1] || "";
+	}
+
+	isActive(navLink: IMenu): boolean {
+		// If no routerLink, this is a fragment-only link
+		if (!navLink.routerLink) {
+			return false;
+		}
+
+		// If there's a fragment, check both route and fragment
+		if (navLink.fragment) {
+			return (
+				this.currentRoute === navLink.routerLink &&
+				this.currentFragment === navLink.fragment
+			);
+		}
+
+		// If no fragment, check only the route (exact match)
+		return this.currentRoute === navLink.routerLink;
+	}
 
 	onNavClick(navLink: IMenu, event: Event): void {
 		// Handle fragment-only navigation (no routerLink)
@@ -112,8 +172,7 @@ export class MobileNavbar {
 					[fragment]="
 						navLink.routerLink ? navLink.fragment || undefined : undefined
 					"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: navLink.routerLink === '/' }"
+					[class.active]="isActive(navLink)"
 					class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 cursor-pointer"
 				>
 					{{ navLink.label }}
@@ -124,10 +183,64 @@ export class MobileNavbar {
 	`,
 	styleUrl: "./navbar.scss",
 })
-export class DesktopNavbar {
+export class DesktopNavbar implements OnInit, OnDestroy {
 	navLinks: IMenu[] = NAV_LIST;
+	private destroy$ = new Subject<void>();
+	currentRoute = "";
+	currentFragment = "";
 
-	constructor(private scrollService: ScrollService) {}
+	constructor(
+		private scrollService: ScrollService,
+		private router: Router,
+		private route: ActivatedRoute,
+	) {}
+
+	ngOnInit(): void {
+		// Set initial state
+		this.updateActiveState();
+
+		this.router.events
+			.pipe(
+				filter((event) => event instanceof NavigationEnd),
+				takeUntil(this.destroy$),
+			)
+			.subscribe(() => {
+				this.updateActiveState();
+			});
+
+		// Also listen for fragment changes
+		this.route.fragment.pipe(takeUntil(this.destroy$)).subscribe((fragment) => {
+			this.currentFragment = fragment || "";
+		});
+	}
+
+	ngOnDestroy(): void {
+		this.destroy$.next();
+		this.destroy$.complete();
+	}
+
+	private updateActiveState(): void {
+		this.currentRoute = this.router.url.split("#")[0];
+		this.currentFragment = this.router.url.split("#")[1] || "";
+	}
+
+	isActive(navLink: IMenu): boolean {
+		// If no routerLink, this is a fragment-only link
+		if (!navLink.routerLink) {
+			return false;
+		}
+
+		// If there's a fragment, check both route and fragment
+		if (navLink.fragment) {
+			return (
+				this.currentRoute === navLink.routerLink &&
+				this.currentFragment === navLink.fragment
+			);
+		}
+
+		// If no fragment, check only the route (exact match)
+		return this.currentRoute === navLink.routerLink;
+	}
 
 	onNavClick(navLink: IMenu, event: Event): void {
 		// Handle fragment-only navigation (no routerLink)
