@@ -18,10 +18,11 @@ import {
 import { Footer } from "../shared/components/layout/footer/footer";
 import { AosService } from "../shared/services/aos.service";
 import { Loader } from "../shared/components/loader/loader";
+import { ScrollToTopComponent } from "../shared/components/scroll-to-top/scroll-to-top";
 
 @Component({
 	selector: "app-root",
-	imports: [RouterOutlet, Footer, Loader],
+	imports: [RouterOutlet, Footer, Loader, ScrollToTopComponent],
 	templateUrl: "./app.html",
 	styleUrl: "./app.scss",
 })

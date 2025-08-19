@@ -7,11 +7,11 @@ import { ScrollService } from "../../services/scroll.service";
 	template: `
 		@if(showScrollButton){<button
 			(click)="scrollToTop()"
-			class="fixed bottom-8 right-8 z-50 p-3 bg-gray-900 text-white rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 opacity-0 animate-fade-in"
+			class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 p-3 md:p-4 bg-gray-900 text-white rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 opacity-100 animate-fade-in"
 			aria-label="Scroll to top"
 		>
 			<svg
-				class="w-6 h-6"
+				class="w-5 h-5 md:w-6 md:h-6"
 				fill="none"
 				stroke="currentColor"
 				stroke-width="2"
@@ -39,6 +39,15 @@ import { ScrollService } from "../../services/scroll.service";
 				to {
 					opacity: 1;
 					transform: translateY(0);
+				}
+			}
+
+			/* Ensure button is visible on mobile */
+			@media (max-width: 768px) {
+				button {
+					bottom: 1.5rem !important;
+					right: 1.5rem !important;
+					z-index: 9999 !important;
 				}
 			}
 		`,
