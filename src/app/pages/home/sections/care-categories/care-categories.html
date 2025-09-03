@@ -1,0 +1,60 @@
+<app-container class="my-8 md:my-16">
+	<app-section-header
+		eyedrop="Care Categories"
+		title="Our Care Categories"
+		description="We provide comprehensive care solutions tailored to meet the unique needs of each resident and their family. Choose the care option that best fits your situation."
+	>
+	</app-section-header>
+
+	<div
+		class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 my-24"
+		data-aos="fade-up"
+		data-aos-duration="800"
+		data-aos-offset="200"
+	>
+		@for (category of careCategories; track $index) {
+		<div
+			class="flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8 group"
+			data-aos="fade-up"
+			data-aos-duration="600"
+		>
+			<!-- Icon/Logo -->
+			<div class="flex justify-start mb-4">
+				<div
+					class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center group-hover:bg-sage-200 transition-colors duration-300"
+				>
+					<ng-icon
+						[name]="category.icon"
+						class="w-6 h-6 text-sage-600 group-hover:text-sage-700"
+					></ng-icon>
+				</div>
+			</div>
+
+			<!-- Small Label -->
+			<p class="text-sm text-gray-500 mb-2 font-medium">{{ category.label }}</p>
+
+			<!-- Title -->
+			<h3
+				class="text-xl font-bold text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300"
+			>
+				{{ category.title }}
+			</h3>
+
+			<!-- Description -->
+			<p class="text-gray-600 mb-6 leading-relaxed">
+				{{ category.description }}
+			</p>
+
+			<!-- CTA Button
+			<div class="mt-auto">
+				<button
+					class="btn btn-sage w-full group-hover:bg-sage-600 transition-colors duration-300"
+					(click)="scrollToCategory(category.ctaLink)"
+				>
+					{{ category.ctaText }}
+				</button>
+			</div> -->
+		</div>
+		}
+	</div>
+</app-container>

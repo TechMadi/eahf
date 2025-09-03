@@ -16,7 +16,7 @@ export const CONTACT_DETAILS: ContactType[] = [
 		label: "Home Phone",
 		icon: "PhoneIcon",
 		value: "(253) 392-4256",
-		href: "tel:2533924256",
+		href: "tel:2533024256",
 	},
 	{
 		label: "Cell Phone",
@@ -53,9 +53,9 @@ export const Mini_Contact_Details: ContactType[] = [
 	{
 		label: "Call Us",
 		icon: "heroPhone",
-		value: "Home : (253) 392-4256",
+		value: "Home : (253) 302-4256",
 		value2: "Phone : (253) 507-3970",
-		href: "tel:2533924256",
+		href: "tel:2533024256",
 	},
 
 	{
