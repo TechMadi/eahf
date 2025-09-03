@@ -9,10 +9,11 @@ import { AboutUs } from "./sections/about-us/about-us";
 import { Services } from "./sections/services/services";
 import { ScrollToTopComponent } from "../../../shared/components/scroll-to-top/scroll-to-top";
 import { AppFragment } from "../../../shared/models/navbar.const";
+import { CareCategories } from "./sections/care-categories/care-categories";
 
 @Component({
 	selector: "app-home",
-	imports: [Header, AboutUs, Services, ScrollToTopComponent],
+	imports: [Header, AboutUs, Services, ScrollToTopComponent, CareCategories],
 	templateUrl: "./home.html",
 	styleUrl: "./home.scss",
 })

@@ -1,0 +1,43 @@
+// Care Categories Section Styles
+:host {
+	display: block;
+}
+
+// Card hover effects
+.card {
+	transition: all 0.3s ease;
+	
+	&:hover {
+		transform: translateY(-4px);
+	}
+}
+
+// Icon container animations
+.icon-container {
+	transition: all 0.3s ease;
+	
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+// Button hover effects
+.btn-sage {
+	transition: all 0.3s ease;
+	
+	&:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(74, 153, 104, 0.3);
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.grid {
+		gap: 1rem;
+	}
+	
+	.card {
+		padding: 1.5rem;
+	}
+}

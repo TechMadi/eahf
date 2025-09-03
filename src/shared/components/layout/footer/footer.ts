@@ -6,7 +6,7 @@ import { heroPhoto, heroBuildingOffice } from "@ng-icons/heroicons/outline";
 @Component({
 	selector: "app-footer",
 	standalone: true,
-	imports: [RouterModule, NgIcon],
+	imports: [RouterModule],
 	templateUrl: "./footer.html",
 	styleUrl: "./footer.scss",
 	viewProviders: [

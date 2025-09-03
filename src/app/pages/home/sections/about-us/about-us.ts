@@ -14,7 +14,7 @@ import { NgOptimizedImage } from "@angular/common";
 
 @Component({
 	selector: "app-about-us",
-	imports: [Container, NgIcon, SectionHeader, NgOptimizedImage],
+	imports: [Container, SectionHeader, NgOptimizedImage],
 	templateUrl: "./about-us.html",
 	styleUrl: "./about-us.scss",
 	viewProviders: [
